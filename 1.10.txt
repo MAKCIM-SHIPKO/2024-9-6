@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+
+class tovar {
+    private:
+        std::string name;
+        int cost;
+        int pcs;
+    
+    public:
+        tovar(std::string name, int cost, int pcs):
+        name(name), cost(cost), pcs(pcs) {}
+        
+        void printInfo () {
+            std::cout << "Название : " << name << " " << pcs << " (штук, цена * Кол-во) " << cost*pcs << " Рублей." << std::endl;
+        }
+        
+        ~tovar () {
+            std::cout << "Товар больше не хранится на складe." << std::endl;
+        }
+        
+        void set_name (std::string name) {
+            this->name = name;
+        }
+        
+        void set_cost (int cost) {
+            this->cost = cost;
+        }
+        
+        void set_pcs (int pcs) {
+            this->pcs = pcs;
+        }
+        
+        std::string get_mane () {
+            return this->name;
+        }
+        
+        int get_cost () {
+            return this->cost;
+        }
+        
+        int get_pcs () {
+            return this->pcs;
+        }
+};
+
+int main () {
+    tovar myTOBAP("Ноутбук ASUS", 25600, 8);
+    myTOBAP.printInfo();
+    
+    myTOBAP.set_name("Паяльная станция");
+    myTOBAP.set_cost(32000);
+    myTOBAP.set_pcs(16);
+    myTOBAP.printInfo();
+}

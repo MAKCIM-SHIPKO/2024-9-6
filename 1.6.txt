@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+
+  class Phone {
+    private:
+        std::string marka;
+        std::string model;
+        std::string oc;
+        int bat_capacity;
+        int procent;
+
+    public:
+        Phone(std::string marka, std::string model, std::string oc, int bat_capacity, int procent):
+            marka(marka), model(model), oc(oc), bat_capacity(bat_capacity), procent(procent) {}
+
+        ~Phone() {
+            std::cout << "Phone off." << std::endl;
+        }
+
+        void print_info() {
+            std::cout << "Info: " << marka << ", " << model << ", " << oc << ", " << procent << std::endl;
+        }
+
+        void set_marka(std::string marka) {
+            this->marka = marka;
+        }
+
+        void set_model(std::string model) {
+            this->model = model;
+        }
+
+        void set_oc(std::string oc) {
+            this->oc = oc;
+        }
+
+        void set_bat_capacity(int bat_capacity) {
+            this->bat_capacity = bat_capacity;
+        }
+
+        void set_procent(int procent) {
+            this->procent = procent;
+        }
+
+        std::string get_marka() {
+            return marka;
+        }
+
+        std::string get_model() {
+            return model;
+        }
+
+        std::string get_oc() {
+            return oc;
+        }
+
+        int get_bat_capacity() {
+            return bat_capacity;
+        }
+
+        int get_procent() {
+            return procent;
+        }
+};
+
+int main () {
+    Phone myPhone("Samsung", "S21", "Android", 14000, 43);
+    myPhone.print_info();
+
+    myPhone.set_marka("Apple");
+    myPhone.set_model("iPhone 13");
+    myPhone.set_oc("iOS");
+    myPhone.set_bat_capacity(12400);
+    myPhone.set_procent(11);
+    myPhone.print_info();
+  
+    return 0;
+}

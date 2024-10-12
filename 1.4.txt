@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+class Komp_uter {
+    private:
+        std::string I3gOTOBITELb;
+        std::string MODELb_CPU;
+        int O5EPATIBKA;
+        int O6_EM_ROM;
+
+    public:
+        Komp_uter(std::string I3gOTOBITELb, std::string MODELb_CPU, int O5EPATIBKA, int O6_EM_ROM):
+            I3gOTOBITELb(I3gOTOBITELb), MODELb_CPU(MODELb_CPU), O5EPATIBKA(O5EPATIBKA), O6_EM_ROM(O6_EM_ROM) {}
+
+        ~Komp_uter() {
+            std::cout << "Komp_uter off." << std::endl;
+        }
+
+        void print_info() {
+            std::cout << "Info about the computer: " << I3gOTOBITELb << ", " << MODELb_CPU << ", " << O5EPATIBKA << ", " << O6_EM_ROM << std::endl;
+        }
+
+        void set_O5EPATIBKA(int O5EPATIBKA) {
+            this->O5EPATIBKA = O5EPATIBKA;
+        }
+
+        void set_O6_EM_ROM(int O6_EM_ROM) {
+            this->O6_EM_ROM = O6_EM_ROM;
+        }
+
+        void set_I3gOTOBITELb(std::string I3gOTOBITELb) {
+            this->I3gOTOBITELb = I3gOTOBITELb;
+        }
+
+        void set_MODELb_CPU(std::string MODELb_CPU) {
+            this->MODELb_CPU = MODELb_CPU;
+        }
+
+        std::string get_I3gOTOBITELb() {
+            return I3gOTOBITELb;
+        }
+
+        std::string get_MODELb_CPU() {
+            return MODELb_CPU;
+        }
+
+        int get_O5EPATIBKA() {
+            return O5EPATIBKA;
+        }
+
+        int get_O6_EM_ROM() {
+            return O6_EM_ROM;
+        }
+};
+
+int main() {
+    Komp_uter computer1("MAKCIM_ELEX", "Intel Core i5-2500K", 16, 128);
+    computer1.print_info();
+
+    computer1.set_O5EPATIBKA(16);
+    computer1.set_O6_EM_ROM(32768);
+
+    computer1.set_I3gOTOBITELb("HP");
+    computer1.set_MODELb_CPU("Intel Core i3-8100");
+    computer1.print_info();
+    return 0;
+}

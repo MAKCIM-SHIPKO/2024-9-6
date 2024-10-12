@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+class Book {
+    private:
+        std::string author;
+        std::string name;
+        int year;
+        float n_str;
+
+    public:
+        Book(std::string author, std::string name, int year, float n_str):
+            author(author), name(name), year(year), n_str(n_str) {} 
+
+        ~Book() {
+            std::cout << "Book deleted" << std::endl;
+        }
+
+        void printBook() {
+            std::cout << "Info: " << author << ", " << name << ", " << n_str << ", " << year <<std::endl;
+        }
+
+        void set_author(std::string author) {
+            this->author = author;
+        }
+
+        void set_name(std::string name) {
+            this->name = name;
+        }    
+
+        void set_year(int year) {
+            this->year = year;
+        }
+
+        void set_n_str(float n_str) {
+            this->n_str = n_str;
+        }
+
+        std::string get_author() {
+            return this->author;
+        }
+
+        std::string get_name() {
+            return this->name;
+        }
+
+        int get_year() {
+            return this->year;
+        }
+
+        float get_n_str() {
+            return this->n_str;
+        }
+};
+
+int main() {
+    Book myBook ("Александр Пушкин", "Евгений Онегин", 2014, 301);
+    myBook.printBook();
+
+    myBook.set_author("Александр Пушкин");
+    myBook.set_name("Мертвые души");
+
+    myBook.set_year(1442);
+    myBook.set_n_str(1031);
+    myBook.printBook();
+    return 0;
+}

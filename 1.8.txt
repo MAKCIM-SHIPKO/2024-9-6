@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+
+class Film {
+    private:
+        std::string name;
+        std::string director;
+        int year;
+        float rating;
+
+    public:
+        Film(std::string name, std::string director, int year, float rating):
+            name(name), director(director), year(year), rating(rating) {}
+
+        ~Film() {
+            std::cout << "The end" << std::endl;
+        } 
+
+        void print_Film() {
+            std::cout << "Name: " << name << ", " << director << ", " << year << ", " << rating <<std::endl;
+        }
+
+        void set_name(std::string name) {
+            this->name = name;
+        }
+
+        void set_director(std::string director) {
+            this->director = director;
+        }
+
+        void set_year(int year) {
+            this->year = year;
+        }
+
+        void set_rating(int rating) {
+            this->rating = rating;
+        }
+
+        std::string get_name() {
+            return name;
+        }
+
+        std::string get_director() {
+            return director;
+        }
+
+        int get_year() {
+            return year;
+        }
+
+        int get_rating() {
+            return rating;
+        }
+};
+
+int main () {
+    Film myFilm("The Shawshank Redemption", "Frank Darabont", 1994, 8.5);
+    myFilm.print_Film();
+
+    myFilm.set_name("The Godfather");
+    myFilm.set_director("Francis Ford Coppola");
+
+    myFilm.set_year(1972);
+    myFilm.set_rating(9);
+    myFilm.print_Film();
+
+    return 0;
+}

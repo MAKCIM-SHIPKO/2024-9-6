@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+
+class PO6ITHuK {
+    private:
+    
+    std::string name;
+    std::string DOlzhHOCTb;
+    int ZAP5LATA;
+    int CTAzh;
+    
+    public:
+    
+    PO6ITHuK (std::string name, std::string DOlzhHOCTb, int ZAP5LATA, int CTAzh):
+    name(name), DOlzhHOCTb(DOlzhHOCTb), ZAP5LATA(ZAP5LATA), CTAzh(CTAzh) {}
+    
+    ~PO6ITHuK () {
+        std::cout << "Работник уволен." << std::endl;
+    }
+    
+    void printPO6ITHuK() {
+        std::cout << "IHFO: " << name << ", " << DOlzhHOCTb << ", " << ZAP5LATA << ", " << CTAzh << " лет" << std::endl;
+    }
+    
+    void set_name(std::string name) {
+        this->name = name;
+    }
+    
+    void set_DOlzhHOCTb(std::string DOlzhHOCTb) {
+        this->DOlzhHOCTb = DOlzhHOCTb;
+    }
+
+    void set_3AP5LATA(int ZAP5LATA) {
+        this->ZAP5LATA = ZAP5LATA;
+    }
+    
+    void set_CTAzh(int CTAzh) {
+        this->CTAzh = CTAzh;
+    }
+    
+    std::string get_name() {
+        return this->name;
+    }
+    
+    std::string get_DOlzhHOCTb() {
+        return this->DOlzhHOCTb;
+    }
+
+    int get_ZAP5LATA() {
+        return this->ZAP5LATA;
+    }
+
+    int get_CTAzh() {
+        return this->CTAzh;
+    }
+};
+
+int main () {
+    PO6ITHuK myPO6ITHuK ("Иванов Иван Иванович", "Слесарь", 15000, 5);
+    myPO6ITHuK.printPO6ITHuK();
+    
+    myPO6ITHuK.set_name("Иванов Иван Иванович");
+    myPO6ITHuK.set_DOlzhHOCTb("Слесарь");
+    myPO6ITHuK.set_3AP5LATA(28000);
+    myPO6ITHuK.set_CTAzh(8);
+    myPO6ITHuK.printPO6ITHuK();
+}

@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+
+class Igrok {
+    private:
+    
+    std::string name;
+    int level;
+    int score;
+    
+    public:
+    
+    Igrok (std::string name, int level, int score):
+    name(name), level(level), score(score) {}
+    
+    ~Igrok () {
+        std::cout << "Iгрок удален." << std::endl;
+    }
+    
+    void printIgrok() {
+        std::cout << "IHFO: " << name << ", " << level << ", " << score << std::endl;
+    }
+    
+    void set_name(std::string name) {
+        this->name = name;
+    }
+    
+    void set_level(int level) {
+        this->level = level;
+    }
+
+    void set_score(int score) {
+        this->score = score;
+    }
+    
+    std::string get_name() {
+        return this->name;
+    }
+
+    int get_level() {
+        return this->level;
+    }
+
+    int get_year() {
+        return this->score;
+    }
+};
+
+int main () {
+    Igrok myIgrok ("Снайпер_2000", 2, 15000);
+    myIgrok.printIgrok();
+    
+    myIgrok.set_name("Снайпер_2000");
+    myIgrok.set_level(3);
+    myIgrok.set_score(20000);
+    myIgrok.printIgrok();
+}

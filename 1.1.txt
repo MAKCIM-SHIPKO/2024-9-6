@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string>
+class Automobile {
+    private:
+        std::string brand;
+        std::string model;
+        int year;
+        float probeg;
+    public:
+        Automobile(std::string brand, std::string model, int year, int probeg):
+        brand(brand), model(model), year(year), probeg(probeg) {}
+
+        ~Automobile() {
+            std::cout << "Automobile deleted" << std::endl;
+        }
+    
+        void printprobeg() {
+            std::cout << "Probeg: " << probeg << ", " << brand << model << ", " << year <<std::endl;
+        }
+    
+        void set_brand(std::string brand) {
+            this->brand = brand;
+        }
+    
+        void set_model(std::string model) {
+            this->model = model;
+        }
+    
+        void set_year(int year) {
+            this->year = year;
+        }
+    
+        void set_probeg(float probeg) {
+            this->probeg = probeg;
+        }
+    
+        std::string get_model() {
+            return this->model;
+        }
+};   
+
+int main() {
+    Automobile myAutomobile("АУДИ", " Q6", 2022, 30411);
+    myAutomobile.printprobeg();
+  
+    myAutomobile.set_brand("BMW");
+    myAutomobile.set_model(" X5");
+  
+    myAutomobile.set_year(2022);
+    myAutomobile.set_probeg(20000.031);
+    myAutomobile.printprobeg();
+    return 0;
+}
